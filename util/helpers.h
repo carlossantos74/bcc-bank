@@ -22,15 +22,3 @@ int includes(int array[], int element)
 
   return isElementPresent;
 }
-
-/**
- * @function createFile
- * @param {char} dbname - nome do banco que vai ser criado.
- * @description - Cria o arquivo para persistir os dados
- * @returns void
- */
-void createFile(char *dbname)
-{
-  FILE *db = fopen(dbname, "a+");
-  fclose(db);
-}
