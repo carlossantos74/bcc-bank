@@ -2,10 +2,11 @@
 #include "util/helpers.h"
 #include "util/banner.h"
 #include "services/bank-customer.h"
+#include "services/bank-depositis.h"
 
 int menu()
 {
-  int options[] = {0, 1, 2, 3, 4};
+  int options[] = {0, 1, 2, 3, 4, 5, 6, 7};
   int option = -1;
 
   printf("Selecione a opção desejada \n");
@@ -13,6 +14,9 @@ int menu()
   printf("2 - Editar cliente \n");
   printf("3 - Listar clientes \n");
   printf("4 - Deletar cliente \n");
+  printf("5 - Adicionar depósito \n");
+  printf("6 - Listar depósitos \n");
+  printf("7 - Deletar depósito \n");
   printf("0 - Sair \n");
   scanf("%d", &option);
 
@@ -27,6 +31,7 @@ int menu()
 void main()
 {
   createCustomerDb();
+  createDepositDb();
 
   banner();
   int option = menu();
@@ -44,6 +49,15 @@ void main()
     break;
   case 4:
     deleteCustomer();
+    break;
+  case 5:
+    createDeposit();
+    break;
+  case 6:
+    listDeposits();
+    break;
+  case 7:
+    deleteDeposit();
     break;
   default:
     break;
